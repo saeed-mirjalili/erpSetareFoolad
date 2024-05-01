@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RollController;
+use App\Http\Controllers\CutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,4 @@ use App\Http\Controllers\RollController;
 //});
 
 Route::apiResource('rolls',RollController::class);
+Route::apiResource('cuts',CutController::class);

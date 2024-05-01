@@ -11,15 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('rolls', function (Blueprint $table) {
+        Schema::create('cuts', function (Blueprint $table) {
             $table->id();
-            $table->string('barcodeRoll')->unique();
-            $table->string('source');
-            $table->integer('weight');
+            $table->string('barcodeRoll');
+            $table->string('barcodeCut');
+            $table->bigInteger('width');
             $table->softDeletes();
             $table->timestamps();
 
-//            $table->foreign('barcode')->references('parent')->on('cuts')->onDelete('cascade');
+            $table->foreign('barcodeRoll')->references('barcodeRoll')->on('rolls')->onDelete('cascade');
         });
     }
 
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('rolls');
+        Schema::dropIfExists('cuts');
     }
 };

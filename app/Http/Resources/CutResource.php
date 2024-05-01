@@ -5,7 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class RollResource extends JsonResource
+class CutResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,9 +16,8 @@ class RollResource extends JsonResource
     {
         return [
             'barcodeRoll'=>$this->barcodeRoll,
-            'source'=>$this->source,
-            'weight'=>$this->weight,
-            'cuts'=> CutResource::collection($this->whenLoaded('cut')),
+            'barcodeCut'=>$this->barcodeCut,
+            'width'=>$this->width,
         ];
     }
 }
