@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RollSeeder::class,
             CutSeeder::class,
+            ProdSeeder::class,
         ]);
     }
 }

@@ -10,10 +10,15 @@ class Cut extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $guarded;
+    protected $guarded = [];
 
-//    public function roll()
-//    {
-//        return $this->belongsTo(Roll::class , 'barcodeRoll' , 'barcodeRoll');
-//    }
+    public function roll()
+    {
+        return $this->belongsTo(Roll::class, 'barcodeRoll' , 'barcodeRoll');
+    }
+
+    public function prod()
+    {
+        return $this->hasMany(Prod::class, 'barcodeProd' , 'barcodeProd');
+    }
 }

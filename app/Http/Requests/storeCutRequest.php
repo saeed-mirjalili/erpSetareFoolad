@@ -21,8 +21,8 @@ class storeCutRequest extends apiFormRequest
     {
         return [
             'barcodeRoll' => 'required|exists:App\Models\Roll,barcodeRoll',
-            'cut' => 'array',
-            'cut.*' => 'numeric',
+            'width' => 'array',
+            'width.*' => 'numeric',
         ];
     }
 }

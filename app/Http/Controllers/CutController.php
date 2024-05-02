@@ -25,7 +25,7 @@ class CutController extends Controller
     public function store(storeCutRequest $request)
     {
         $cuts = $request->validated();
-        foreach ($cuts['cut'] as $cut)
+        foreach ($cuts['width'] as $cut)
             Cut::create([
                 'barcodeRoll' => $cuts['barcodeRoll'],
                 'barcodeCut' => md5(uniqid(rand(),true)),

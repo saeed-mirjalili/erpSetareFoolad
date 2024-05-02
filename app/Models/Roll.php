@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Roll extends Model
 {
     use HasFactory,SoftDeletes;
-    protected $guarded;
+    protected $guarded = [];
 
     public function cut()
     {
